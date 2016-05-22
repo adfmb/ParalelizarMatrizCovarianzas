@@ -17,8 +17,8 @@ int main (void){
         
         
     }
-    q=(q+p+1)/(p+1)+1;
-    p=p+1-1;
+    q=(q+p)/(p);
+    p=p;
     printf("%d\n %d\n",p, q);
     
 return 0;

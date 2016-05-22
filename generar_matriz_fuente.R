@@ -7,10 +7,10 @@ generar_matriz<-function(filas,columnas,minimo=-1,maximo=50){
   m<-matrix(cbind(round(runif(filas*columnas,minimo,maximo))),ncol=columnas)
   
   setwd("~/Dropbox/01_ITAM_Ciencia_de_Datos/2do_semestre/ComputoParalelo/Comp_Paralelo/ParalelizarMatrizCovarianzas")
-  out <- file("file.csv", "w", encoding="latin1") 
+  out <- file("fuente.csv", "w", encoding="latin1") 
   write.table(m, out, sep=",", row.names=FALSE,col.names = FALSE) 
   close(out) 
   
 }
 
-generar_matriz(10,10,-2,100)
+generar_matriz(10,100,-2,100)
