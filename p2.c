@@ -12,7 +12,7 @@ int main(void)
     const char filename2[] = "file2.csv";
     
     int array2[2][1];
-    size_t i, j, k;
+    size_t i2, j2, k2;
     char buffer[BUFSIZ], *ptr;
     
     FILE *file2 = fopen(filename2, "r");
@@ -23,26 +23,26 @@ int main(void)
         /*
          * Read each line from the file.
          */
-        for ( i = 0; fgets(buffer, sizeof buffer, file2); ++i )
+        for ( i2 = 0; fgets(buffer, sizeof buffer, file2); ++i2 )
         {
             /*
              * Parse the comma-separated values from each line into 'array'.
              */
-            for ( j = 0, ptr = buffer; j < ARRAYSIZE(*array2); ++j, ++ptr )
+            for ( j2 = 0, ptr = buffer; j2 < ARRAYSIZE(*array2); ++j2, ++ptr )
             {
-                array2[i][j] = (int)strtol(ptr, &ptr, 10);
+                array2[i2][j2] = (int)strtol(ptr, &ptr, 10);
             }
         }
         fclose(file2);
         /*
          * Print the data in 'array'.
          */
-        for ( j = 0; j < i; ++j )
+        for ( j2 = 0; j2 < i2; ++j2 )
         {
             //printf("array2[%lu]: ", j);
-            for ( k = 0; k < ARRAYSIZE(*array2); ++k )
+            for ( k2 = 0; k2 < ARRAYSIZE(*array2); ++k2 )
             {
-                printf("%4d ", array2[j][k]);
+                printf("%4d ", array2[j2][k2]);
             }
             putchar('\n');
         }
@@ -74,26 +74,26 @@ int main(void)
         /*
          * Read each line from the file.
          */
-       for ( i = 0; fgets(buffer, sizeof buffer, file); ++i )
+       for ( i2 = 0; fgets(buffer, sizeof buffer, file); ++i2 )
         {
             /*
              * Parse the comma-separated values from each line into 'array'.
              */
-           for ( j = 0, ptr = buffer; j < ARRAYSIZE(*array); ++j, ++ptr )
+           for ( j2 = 0, ptr = buffer; j2 < ARRAYSIZE(*array); ++j2, ++ptr )
             {
-                array[i][j] = (int)strtol(ptr, &ptr, 10);
+                array[i2][j2] = (int)strtol(ptr, &ptr, 10);
             }
         }
         fclose(file);
         /*
          * Print the data in 'array'.
          */
-       for ( j = 0; j < i; ++j )
+       for ( j2 = 0; j2 < i2; ++j2 )
         {
-            printf("array[%lu]: ", j);
-            for ( k = 0; k < ARRAYSIZE(*array); ++k )
+            printf("array[%lu]: ", j2);
+            for ( k2 = 0; k2 < ARRAYSIZE(*array); ++k2 )
             {
-                printf("%4d ", array[j][k]);
+                printf("%4d ", array[j2][k2]);
             }
             putchar('\n');
         }

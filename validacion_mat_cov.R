@@ -1,17 +1,4 @@
-NRA<-200
-NCA<-500
-Matriz<-matrix(ncol=NCA, nrow=NRA)
-
-for(i in 0:(nrow(Matriz)-1)){
-  
-  for(j in 0:(ncol(Matriz)-1)){
-    
-    Matriz[i+1,j+1]<-i+j
-    
-  }
-  
-}
-
-M_covarianzas<-cov(Matriz)
-
-Matriz<-Matriz/5
+setwd("~/Dropbox/01_ITAM_Ciencia_de_Datos/2do_semestre/ComputoParalelo/Comp_Paralelo/ParalelizarMatrizCovarianzas")
+Matriz<-read.csv("file.csv",header = FALSE)
+M_covarianzas<-cov(Matriz)*(nrow(Matriz)-1)/nrow(Matriz)
+View(M_covarianzas)
