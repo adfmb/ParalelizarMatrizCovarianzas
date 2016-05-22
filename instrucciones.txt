@@ -1,0 +1,9 @@
+./f1.o<fuente.csv>file2.csv && ./p3 250 
+
+gcc -g -Wall -fopenmp p3.c -o p3
+
+gcc f1.c -o f1.o
+
+
+
+
