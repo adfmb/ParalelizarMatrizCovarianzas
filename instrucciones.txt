@@ -4,6 +4,9 @@ gcc -g -Wall -fopenmp p3.c -o p3
 
 gcc f1.c -o f1.o
 
-
+ docker-machine start default
+ docker-machine restart default
+ eval "$(docker-machine env default)"
+ docker run --rm -v $(pwd):/results -it  openmpi/openmpi:v1 /bin/bash
 
 
